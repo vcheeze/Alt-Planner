@@ -1,0 +1,497 @@
+body {
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    color: #ffffff;
+}
+/*======== NAVIGATION BAR ========*/
+.nav-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(47, 49, 49, 0.75);
+    z-index: 100;
+    text-align: center;
+    display: none;
+}
+
+nav h1 {
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    font-size: 1.35em;
+    color: #eee; /* Change this color later */
+}
+
+.input-box {
+    position: relative;
+    width: 300px;
+    margin-top: 5px;
+    float: right;
+}
+
+input[type=text] {
+    text-align: center;
+}
+
+.mySvg {
+    position: relative;
+    top: -125px;
+    left: -300px;
+    width: 900px;
+    height: 300px;
+    z-index: 101;
+}
+
+.t-input {
+    position: absolute;
+    top: 5px;
+    left: 14px;
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    z-index: 102;
+    cursor: pointer;
+    opacity: 0;
+    transition:opacity 0.2s 0.6s linear;
+    -webkit-transition:opacity 0.2s 0.6s linear;
+    -moz-transition: opacity 0.2s 0.6s linear;
+    -o-transition: opacity 0.2s 0.6s linear;
+}
+.t-input:focus {
+    opacity: 1;
+    cursor: text;
+}
+
+.magnifier {
+    stroke-dasharray: 0, 0, 140;
+    transition: all 0.8s linear;
+    -webkit-transition: all 0.8s linear;
+}
+.t-input:focus+svg .magnifier {
+    stroke-dasharray: 0, 140, 0;
+}
+
+.input-line {
+    stroke-dasharray: 0, 800;
+    transition: all 1.1s cubic-bezier(0.73, 0.01, 0.35, 1);
+    -webkit-transition: all 1.1s cubic-bezier(0.73, 0.01, 0.35, 1);
+}
+.t-input:focus+svg .input-line {
+    stroke-dasharray: 800,0;
+}
+
+/*======= VERTICAL NAVIGATION ========*/
+.cd-scroll-down {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: 38px;
+    height: 44px;
+    background: url("../img/cd-arrow-bottom.svg") no-repeat center center;
+}
+
+#cd-vertical-nav {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 102;
+}
+
+#cd-vertical-nav li {
+    text-align: right;
+    list-style-type: none;
+}
+
+#cd-vertical-nav a {
+    display: inline-block;
+    outline: 0;
+    /* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#cd-vertical-nav a:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#cd-vertical-nav a span {
+    float: right;
+    display: inline-block;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+}
+
+#cd-vertical-nav a:hover span {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+#cd-vertical-nav a:hover .cd-label {
+    opacity: 1;
+}
+
+#cd-vertical-nav a.is-selected .cd-dot {
+    background-color: white;
+}
+
+#cd-vertical-nav .cd-dot {
+    position: relative;
+    /* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+    top: 8px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #d88683;
+    -webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+    -moz-transition: -moz-transform 0.2s, background-color 0.5s;
+    transition: transform 0.2s, background-color 0.5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+#cd-vertical-nav .cd-label {
+    position: relative;
+    margin-right: 10px;
+    padding: .4em .5em;
+    color: white;
+    font-size: 14px;
+    font-size: 0.875rem;
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+    opacity: 0;
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+}
+
+/*======== PAGES OF THE WEBSITE ========*/
+.page {
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.page h2 {
+    position: relative;
+    top: 70px;
+    margin: 0;
+    color: white;
+}
+
+/*======== PAGE 0 ========*/
+#page0 {
+    background: #000;
+}
+
+#page0 img {
+    position: relative;
+    top: 36vh;
+    left: -5vw;
+}
+
+#page0 h2 {
+    position: relative;
+    font-size: 2em;
+    top: 43vh;
+    left: 6.5vw;
+}
+
+.about {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Styling the input box */
+.m-input {
+    position: relative;
+    top: 44vh;
+    left: 2vh;
+    display: inline-block;
+    max-width: 350px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    margin: 1.1em;
+}
+
+.m-input-field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em 0;
+    border: none;
+    border-radius: 0;
+    font-weight: 400;
+    font-family: 'Dosis', Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+    width: 350px;
+    background: transparent;
+    color: #FFF;
+}
+
+.m-input-field:focus {
+    outline: none;
+}
+
+.m-input-label {
+    position: absolute;
+    display: inline-block;
+    float: right;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 85%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    cursor: text;
+}
+
+.m-input-label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+    -webkit-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+    -webkit-transform: scale3d(1, -1, 1);
+    transform: scale3d(1, -1, 1);
+    -webkit-transition: stroke-dashoffset 0.3s;
+    transition: stroke-dashoffset 0.3s;
+    pointer-events: none;
+    stroke: #FFF;
+    stroke-width: 4px;
+    stroke-dasharray: 962;
+    stroke-dashoffset: 558;
+}
+
+.m-input-field:focus + .m-input-label,
+.input--filled .m-input-label {
+    cursor: default;
+    pointer-events: none;
+}
+
+.m-input-field:focus + .m-input-label .graphic,
+.input--filled .graphic {
+    stroke-dashoffset: 0;
+}
+
+.m-input-field:focus + .m-input-label .m-input-label-content,
+.input--filled .m-input-label-content {
+    -webkit-transform: scale3d(0.81, 0.81, 1) translate3d(-9.5em, 3em, 0);
+    transform: scale3d(0.81, 0.81, 1) translate3d(-9.5em, 3em, 0);
+}
+
+/*======== PAGE 1 ========*/
+#page1 {
+    background: #002C54;
+}
+
+/*======== PAGE 2 ========*/
+#page2 {
+    background: #DEEFF7; /**/
+}
+
+#page2 h2 {
+    color: #002C54; /**/
+}
+
+#page2 p {
+    margin: 12.5vh 0 0 0;
+    font-size: 50px;
+    font-weight: 700;
+    color: #EFB509; /**/
+}
+
+/* THE BREAKDOWN SCORES */
+.BSChart {
+    margin-top: 3vh;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #002C54;
+    shape-rendering: crispEdges;
+}
+
+.bar {
+    fill: #FF4447;
+}
+
+.bar:hover {
+    fill: #002C54;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.y.axis text{
+    fill: #002C54;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px;
+    background: rgba(40, 39, 38, 0.9);
+    color: #fff;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(40, 39, 38, 0.9);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+.tick text {
+    fill: #002C54;
+}
+
+/*======== PAGE 3 ========*/
+#page3 {
+    /*background: #C8D6CA; */
+}
+
+#page3 h3 {
+    color: #5C3D46;
+}
+
+#page3 ul {
+    padding: 0;
+}
+
+#page3 li {
+    list-style-type: none;
+}
+
+#page3 li:nth-child(even) {
+    color: #5C868D;
+}
+
+.top-scores {
+    position: relative;
+    top: 15vh;
+    font-size: 1.2em;
+    color: #99BFAA;
+}
+
+.top-searches {
+    position: relative;
+    top: 25vh;
+    font-size: 1.2em;
+    color: #99BFAA;
+}
+
+/* Top Scores Circles */
+path.pencil {
+  stroke-width: 2px;
+  stroke-linecap: round;
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+/*circle.reference {
+  stroke: #bbb;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+  fill: none;
+}*/
+
+/*======== PAGE 4 ========*/
+#page4 {
+    height: 95vh;
+    background: #5C868D;
+}
+
+#page4 h2 {
+    color: #5C3D46;
+}
+
+#page4 p {
+    color: #E7F5DE;
+    position: relative;
+    top: 7.5vh;
+    font-size: 1.25em;
+    padding: 40px;
+}
+
+/*======== FOOTER ========*/
+footer {
+    height: 5vh;
+    float: right;
+    color: black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+/*======== THE CITY SCORE ========*/
+.CSArc {
+    margin: 7.5vh auto;
+}

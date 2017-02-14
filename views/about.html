@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Documententation</title>
+	<link href="https://fonts.googleapis.com/css?family=Mitr" rel="stylesheet">
+	<style>
+		body {
+			margin-left: 20px;
+			font-family: 'Mitr', sans-serif;
+			line-height: 150%;
+			background-color: #F5F2F7;
+		}
+	</style>
+</head>
+<body>
+	<h1>Documentation</h1>
+		<h2>What I did</h2>
+			<p>This is my final project for Mashups. I've created a trip planner using Teleport API. When the user searches for a city, my website gives the user an overall city score and breakdown scores of different aspects of the city. I'm currently working on presenting average prices of different items, and I'm still thinking through the best way to visually present them on the page. My website also gives a brief summary concerning the city, as well as top scores from searched cities and top searches as well.</p>
+		<h2>Why I did it</h2>
+			<p>I originally had the idea to do something related to salaries. Then, when I was trying to plan out upcoming trips for the coming semesters, I thought that it would be really useful if I knew how much certain things would cost on average in certain cities so that I could budget better and be better-informed in my planning about which cities to visit.</p>
+
+		<h2>How I did it</h2>
+			<p>I stumbled upon Teleport API. It provides a wealth of information about cities, although it is a bit complicated to play around with. I used D3.js to draw the graphs and present the data visually.</p>
+			<p>I essentially took the scores and bound them to different sorts of graphs. To do this, I had to decide which graphs or charts best represented the data that I wanted to show. This took some time of thinking, as there were many ways to do this. I read through articles debating the best ways to implement charts and graphs. In the end, I decided to use a radial progress chart for the overall city score, and bar graphs for breakdown scores.</p>
+
+		<h2>Resources leveraged</h2>
+			<p>Here are some of the resources that I used for this project:</p>
+			<ul>
+				<li>
+					<p>The <a href="https://github.com/d3">GitHub page of D3</a>, to look for changelogs between the different versions of D3 (mainly because Mike Bostock uses version 3 in all of his examples, while the newest version is version 4.) This was tough sometimes as I had to look compare what Mike Bostock had in the version 3 code and convert it to version 4 syntax. All in all, however, they all worked out.</p>
+				</li>
+				<li>
+					<p>Mike Bostock's <a href="https://bl.ocks.org/mbostock/5100636">Arc Tween</a> in order to create a D3 arc. This example also includes how to update the arc, so that my radial progress chart can be updated with each search.</p>
+				</li>
+				<li>
+					<p>I tweaked the chart a bit to <a href="http://bl.ocks.org/mbostock/b7671cb38efdfa5da3af">round the corners</a>.</p>
+				</li>
+				<li>
+					<p>To add a tooltip to the bar graph, I used <a href="https://github.com/VACLab/d3-tip">d3-tip.js</a>.</p>
+				</li>
+				<li>
+					<p>I took a look at this article and used its <a href="https://codyhouse.co/gem/vertical-fixed-navigation/">vertical navigation</a>, which is neat for a scrolling website like mine.</p>
+				</li>
+				<li>
+					<p>I looked at several different sites in order to choose color schemes for my pages. The sites included: </p>
+					<ul>
+						<li><a href="https://designschool.canva.com/blog/100-color-combinations/">https://designschool.canva.com/blog/100-color-combinations/</a></li>
+						<li><a href="http://blog.visme.co/color-combinations/">http://blog.visme.co/color-combinations/</a></li>
+						<li><a href="http://line25.com/inspiration/flat-design-color-palettes">http://line25.com/inspiration/flat-design-color-palettes</a></li>
+					</ul>
+				</li>
+			</ul>
+			<p>I continued to use websites like <a href="http://www.w3schools.com/">w3schools</a> and <a href="https://developer.mozilla.org/en/docs/Web/JavaScript">the Mozilla Developer Network</a> for some simple syntax problems concerning JavaScript.</p>
+
+		<h2>Major challenges/realizations</h2>
+			<p>The hardest part of this project was not the actual implementation itself, but more so the planning. I had to spend most of my time plannig, thinking through what my users would want to see, and how I should present those information in both a useful way and an aesthetically pleasing way. I consulted several people and also the mighty Google for this. After I've decided what to do, it was much easier to go ahead and write the code to put what I had in mind on the page.</p>
+			<p>I tried adding something cool to one of the pages, on which I would display the average prices of different items in the cities. I wanted to draw circles that imitated ones that are hand-drawn. That means they would not be perfect circles, but would have variations to them. I managed to do that, but the problem was that prices in different items varied greatly. For instance, the price of an apartment rental versus the price of a cup of water presented such a huge amount of difference in their prices that if I wanted to present them in circles and preserve their ratio, one would be too tiny to see and the other would extend beyond the page. I still think drawing circles like this is cool, but unfortunately I would have to come up with some other way to present the data visually.</p>
+
+		<h2>Feedback received</h2>
+			<p><b>These are some of the feedback that I received:</b></p>
+			<ul>
+				<li>
+					<p><i>So what do I do?</i></p>
+					<p>It seemed that my starting page was not clear, as it had a start button and also had a navigation bar on top from which people could search for cities. I've added a prompt for the user to search for a city to begin now.</p>
+				</li>
+				<li>
+					<p><i>It would be nice if we could see some high scores...</i></p>
+					<p>I'm currently trying to do this...but I encountered some newbie problems trying to store data to Cloudant and wasted some time figuring out how to resolve them. Now I'm back in the business and will try to add that function.</p>
+				</li>
+				<li>
+					<p><i>Put the Search box of the landing page right in the middle, where people are more likely to see and use it.</i></p>
+					<p>Trying to do that...and make the navigation appear only when the user scrolls to the second page.</p>
+				</li>
+			</ul>
+
+		<h2>Lessons learned</h2>
+			<p>There really is no end to improving websites. There will always be things I could add or other people would want to add. Even now, I feel the itch inside of me to go back to my first two projects to add many things I thought of after I had handed them in, while another part of me desperately want to finish this project first. There's just so much to do and so little time to actually <i>do</i> them, that it's very frustrating and very exciting at the same time. Hopefully, next time you visit, this site will look a little different.</p>
+</body>
+</html>

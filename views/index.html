@@ -1,0 +1,141 @@
+<!-- This is something related to living costs -->
+<!-- Create a navbar so that the search bar is floated to the right and other stuff are on the left -->
+<!-- What to do now:
+	2. allow search for living costs?
+	3. allow comparisons between two cities -> but in what form?
+	4. Store and Show top searches
+	5. store top searches
+	6. add about page
+	7. add documentation
+	8. link those back to the actual website
+	9. Tweak the vertical nav so the color fits with each page
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Peter Chen">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Travel Planner giving users information about cities">	
+	<title>Alt Planner</title>
+	<link rel="icon" href="favicon.ico"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:400, 700">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<nav class="nav-bar">
+		<h1>The Alternative Trip Planner</h1>
+		<div class="input-box">
+			<input class="input t-input" id="input-field" type="text" placeholder="Search for a city...">
+			<svg class="mySvg">
+		        <path class="magnifier" d="M554 154 A 14 14 90 1 1 554.1 153.9 L 570 170"
+		              stroke="#fff" stroke-width="3" stroke-linejoin="round" fill="none">
+		        </path>
+		        <path class="input-line" d="M570 170 L310 170 L310 132 L570 132 L570 170"
+		              stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+		        </path>
+	    	</svg>
+		</div>
+	</nav>
+
+	<nav id="cd-vertical-nav">
+		<ul>
+			<li>
+				<a href="#page0" data-number="0">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Start</span>
+				</a>
+			</li>
+			<li>
+				<a href="#page1" data-number="1">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Overall Score</span>
+				</a>
+			</li>
+			<li>
+				<a href="#page2" data-number="2">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Breakdown Scores</span>
+				</a>
+			</li>
+			<li>
+				<a href="#page3" data-number="3">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Top Scores</span>
+				</a>
+			</li>
+			<li>
+				<a href="#page4" data-number="4">
+					<span class="cd-dot"></span>
+					<span class="cd-label">Summary</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="page" id="page0">
+		<a href="/about" class="about">About</a>
+		<h2>Welcome to the Alternative Trip Planner</h2>
+		<img src="img/logo.png" alt="logo" width="123" height="153">
+		<span class="m-input">
+			<input class="input m-input-field" type="text" id="main-input"/>
+			<label class="m-input-label" for="main-input">
+				<svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+					<path d="m0,0 l404,0 l0,77 l-404,0 l0,-77z"/>
+				</svg>
+				<span class="m-input-label-content">Search for a City</span>
+			</label>
+		</span>
+	</div>	
+	<div class="page" id="page1">
+		<h2>Overall City Score</h2>
+		<svg class="CSArc" width="720" height="720"></svg>
+	</div>
+	<div class="page" id="page2">
+		<h2>City Breakdown Scores</h2>
+		<p></p>
+		<svg class="BSChart"></svg>
+	</div>
+	<div class="page" id="page3">
+		<div class="top-scores">
+			<h3>Top Overall Scores</h3>
+			<ul>
+				<li id="score0">Taipei...becuase of course Taiwan is at the top</li>
+				<li id="score1">Amsterdam</li>
+				<li id="score2">Berlin</li>
+				<li id="score3">Copenhagen</li>
+				<li id="score4">Dublin</li>
+			</ul>
+		</div>
+<!-- 		<div class="top-searches">
+			<h3>Top Searches</h3>
+			<ul>
+				<li id="search1">Taipei...again </li>
+				<li id="search2">something</li>
+				<li id="search3">something</li>
+				<li id="search4">something</li>
+				<li id="search5">something</li>
+			</ul>
+		</div> -->
+	</div>
+	<div class="page" id="page4">
+		<h2>Summary</h2>
+		<p></p>
+	</div>
+
+	<footer>
+		<p>Thanks to Teleport API, Mike Bostock, and Linda Huang</p>
+	</footer>
+
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<!-- Bar chart tooltips -->
+	<script src="js/d3-tip.js"></script>
+ 	<!-- Custom JavaScript -->
+ 	<script src="js/script.js"></script>
+</body>
+</html>
