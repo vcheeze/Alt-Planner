@@ -1,7 +1,7 @@
 # Alt-Planner
 ## What I did
 
-This is my final project for Mashups. I've created a trip planner using Teleport API. When the user searches for a city, my website gives the user an overall city score and breakdown scores of different aspects of the city. I'm currently working on presenting average prices of different items, and I'm still thinking through the best way to visually present them on the page. My website also gives a brief summary concerning the city, as well as top scores from searched cities and top searches as well.
+This is my final project for Mashups. I've created a trip planner using [Teleport API](https://developers.teleport.org/api/getting_started/). When the user searches for a city, my website gives the user an overall city score and breakdown scores of different aspects of the city. I'm currently working on presenting average prices of different items, and I'm still thinking through the best way to visually present them on the page. My website also gives a brief summary concerning the city, as well as top scores from searched cities and top searches as well.
 
 ## Why I did it
 
