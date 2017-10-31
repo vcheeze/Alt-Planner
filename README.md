@@ -21,6 +21,8 @@ Here are some of the resources that I used for this project:
 
 *   Mike Bostock's [Arc Tween](https://bl.ocks.org/mbostock/5100636) in order to create a D3 arc. This example also includes how to update the arc, so that my radial progress chart can be updated with each search.
 
+*   This example of [placing text on an arc](https://www.visualcinnamon.com/2015/09/placing-text-on-arcs.html) was also extremely helpful.
+
 *   I tweaked the chart a bit to [round the corners](http://bl.ocks.org/mbostock/b7671cb38efdfa5da3af).
 
 *   To add a tooltip to the bar graph, I used [d3-tip.js](https://github.com/VACLab/d3-tip).
